@@ -2,8 +2,6 @@
 
 get the title of a youtube video in node.js or the browser.
 
-[![npm][npm-image]][npm-url]
-
 ## Install
 
 ```
