@@ -1,16 +1,16 @@
 {
-  "name": "get-youtube-title",
+  "name": "get-youtube-title-await",
   "description": "get a youtube video title.",
-  "version": "1.0.1",
-  "author": "Renée Kooi <renee@kooi.me>",
+  "version": "1.1.0",
+  "author": "Daisuke Sasaki <>",
   "bugs": {
-    "url": "https://github.com/goto-bus-stop/get-youtube-title/issues"
+    "url": "https://github.com/sakkuntyo/get-youtube-title-await"
   },
   "devDependencies": {
     "standard": "^15.0.0",
     "tape": "^5.0.1"
   },
-  "homepage": "https://github.com/goto-bus-stop/get-youtube-title",
+  "homepage": "https://github.com/sakkuntyo/get-youtube-title-await",
   "keywords": [
     "title",
     "video",
@@ -21,7 +21,7 @@
   "browser": "browser.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/goto-bus-stop/get-youtube-title.git"
+    "url": "https://github.com/sakkuntyo/get-youtube-title-await"
   },
   "scripts": {
     "test": "standard && tape test/*.js"
