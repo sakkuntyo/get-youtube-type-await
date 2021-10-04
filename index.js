@@ -7,29 +7,37 @@ var DEFAULT_KEY = Buffer.from('QUl6YVN5QjBRNGdUaG1zMkp0LTZTZ01ZajR1ZFlLZlZmWE5zc
 
 module.exports = function getVideoTitle (id) {
   return new Promise(resolve => {
-
-  assert(typeof id === 'string', 'get-youtube-title: id must be string')
-
-  var url = 'https://www.googleapis.com/youtube/v3/videos'
-  url += '?' + qs.stringify({
-    key: DEFAULT_KEY,
-    part: 'snippet',
-    id: id
-  })
+    assert(typeof id === 'string', 'get-youtube-title: id must be string')
   
-  resolve(https.request(url, onrequest).end())
+    var url = 'https://www.googleapis.com/youtube/v3/videos'
+    url += '?' + qs.stringify({
+      key: DEFAULT_KEY,
+      part: 'snippet',
+      id: id
+    })
+    
+    https.request(url, (res) => {
+      var data = ''
+      res.on('data', (chunk) => {
+        data += chunk
+      })
+      res.on('end', () => {
+        try { var json = JSON.parse(data) } catch (err) { throw err }
+        resolve(onresponse(json))
+      })
+    }).end()
   })
 
   function onrequest (res) {
-    var data = ''
-    res.on('data', ondata)
-    res.on('end', onend)
-
-    function ondata (chunk) { data += chunk }
-    function onend () {
-      try { var json = JSON.parse(data) } catch (err) { throw err }
-      return onresponse(json)
-    }
+      var data = ''
+      res.on('data', ondata)
+      res.on('end', onend)
+  
+      function ondata (chunk) { data += chunk }
+      function onend () {
+        try { var json = JSON.parse(data) } catch (err) { throw err }
+        return onresponse(json)
+      }
   }
 
   function onresponse (json) {
