@@ -1,7 +1,7 @@
 {
   "name": "get-youtube-type-await",
   "description": "get a youtube video title.",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "author": "Daisuke Sasaki <noma@noma>",
   "bugs": {
     "url": "https://github.com/sakkuntyo/get-youtube-type-await/issues"
