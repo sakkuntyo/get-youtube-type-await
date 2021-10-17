@@ -40,6 +40,6 @@ module.exports = function getVideoTitle (id, key, cb) {
   function onresponse (json) {
     if (json.error) return cb(json.error)
     if (json.items.length === 0) return cb(new Error('Not found'))
-    cb(null, json.items[0].snippet.title)
+    cb(null, json.items[0].snippet.liveBroadcastContent)
   }
 }
