@@ -5,7 +5,7 @@ var https = require("https");
 //just so it doesn't show up in automated searches
 var DEFAULT_KEY =
   Buffer.from(
-    "QUl6YVN5QjBRNGdUaG1zMkp0LTZTZ01ZajR1ZFlLZlZmWE5zcmNj",
+    "QUl6YVN5QW55eWZaZ0w4TWZ2WVctMnZOTWFhZ0xmekdyX0hST0NFCg==",
     "base64"
   ) + "";
 
