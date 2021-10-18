@@ -59,7 +59,7 @@ module.exports = function getVideoTitle(id) {
   }
 
   function onresponse(json) {
-    if (json.error) throw err;
+    if (json.error) throw json.error;
     if (json.items.length === 0) throw new Error("Not found");
     console.dir(json.items[0].snippet);
     return json.items[0].snippet.liveBroadcastContent;
